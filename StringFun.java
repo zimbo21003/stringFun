@@ -1,8 +1,8 @@
     /**
  * Fun With Strings
- * 
- * @author (Your Name Goes Here) 
- * @version (11/15/2019)
+ * Dylan Oberst and I worked together on this code
+ * @author (Alexander Zimbalist) 
+ * @version (11/19/2019)
  */
 public class StringFun
 {
@@ -14,8 +14,10 @@ public class StringFun
      */
     public static void printEachLetter(String myName)
     {
-        for (int i = 0; i < s.length(); i++) {
-            System.out.println(s.charAt(i));}   
+        for (int i = 0; i < myName.length(); i++) 
+        {
+            System.out.println(myName.charAt(i));
+        }   
     }
 
  
@@ -26,8 +28,16 @@ public class StringFun
      */
     private static boolean isVowel(char ltr)
     {
-        // replace the body of this method
-        return false;
+        if(ltr=='a' || ltr=='A' || ltr=='e' || ltr=='E' ||
+        ltr=='i' || ltr=='I' || ltr=='o' || ltr=='O' ||
+        ltr=='u' || ltr=='U')
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /**
@@ -37,7 +47,13 @@ public class StringFun
      */
     public static void printVowels(String myName)
     {
-        // your code goes here
+            for (int i = 0; i < myName.length(); i++) 
+            {
+                if(isVowel(myName.charAt(i)) == true)
+                {
+                    System.out.println(myName.charAt(i));
+                }
+            }
     }
 
     /**
@@ -47,20 +63,24 @@ public class StringFun
      */
     public static String backwardsString (String original)
     {
-        // replace the body of this method
-        return "";
+        String reverse = "";
+        for(int i = original.length() - 1; i >= 0; i--)
+        {
+            reverse = reverse + original.charAt(i);
+        }
+        return reverse;
     }
 
-    /**
-     *  Returns true if the given String is a palindrome (reads the same
-     *  forwards and backwards (example: "racecar"). This method should
-     *  be case sensitive (e.g. "Racecar" is not a palindrome but "RacecaR" is).
-     *  You should call your backwardsString method in this method.
-     **/
     public static boolean isPalindrome(String myName)
     {
-        // replace the body of this method
+        if (backwardsString(myName).equals(myName))
+        {
         return true;
+    }
+    else
+    {
+        return false;
+    }
     }      
        
     /**
@@ -71,7 +91,19 @@ public class StringFun
      */
     public static String removeVowels(String s)
     {
-        // replace the body of this method
-        return "";
+        String noVowels = "";
+        for (int i = 0; i < s.length(); i++)
+            
+        if (isVowel(s.charAt(i)) == false)
+            {
+                noVowels = noVowels + s.charAt(i);
+            }
+            else
+            {
+                continue;
+            }
+            return "";
     }   
 }
+ 
+
